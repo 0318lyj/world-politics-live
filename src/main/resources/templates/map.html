@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/main-layout}">
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        // Leaflet 지도 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            const map = L.map('map').setView([20, 0], 2);  // 세계 지도 중심
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors',
+                maxZoom: 18
+            }).addTo(map);
+
+            // 임시 히트맵 테스트 데이터 (나중에 GDELT로 대체)
+            const testHeat = [
+                [37.8, -96.0, 10],   // 미국
+                [55.7, 37.6, 15],    // 러시아
+                [35.6, 139.7, 20],   // 일본
+                [51.5, -0.1, 12]     // 영국
+            ];
+
+            L.heatLayer(testHeat, {
+                radius: 25,
+                blur: 15,
+                maxZoom: 18,
+                gradient: {0.4: 'blue', 0.65: 'lime', 1: 'red'}
+            }).addTo(map);
+        });
+    </script>
+</th:block>
+</html>

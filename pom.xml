@@ -51,6 +51,19 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.5</version>
 		</dependency>
+		<!-- RSS 파싱용 Rome -->
+		<dependency>
+		    <groupId>com.rometools</groupId>
+		    <artifactId>rome</artifactId>
+		    <version>2.1.0</version>
+		</dependency>
+		
+		<!-- GDELT TSV 파싱용 OpenCSV -->
+		<dependency>
+		    <groupId>com.opencsv</groupId>
+		    <artifactId>opencsv</artifactId>
+		    <version>5.9</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.mysql</groupId>

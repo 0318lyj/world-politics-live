@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 왼쪽 사이드바 */
+.sidebar {
+    width: 400px;
+    background-color: #1e1e1e;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.news-list {
+    list-style: none;
+}
+
+.news-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.news-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.news-item a {
+    color: #bb86fc;
+    text-decoration: none;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-item .pub-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+/* 메인 지도 영역 */
+.map-container {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}

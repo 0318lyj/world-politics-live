@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.politicslive.mapper.GdeltEventMapper">
+
+    <insert id="insertEvent" parameterType="com.politicslive.dto.GdeltEventDto">
+        INSERT IGNORE INTO gdelt_event
+        (event_date, avg_tone, lat, lng, intensity, source_url)
+        VALUES
+        (#{eventDate}, #{avgTone}, #{lat}, #{lng}, #{intensity}, #{sourceUrl})
+    </insert>
+
+    <select id="selectRecentHeatPoints" resultType="map">
+        SELECT lat, lng, intensity
+        FROM gdelt_event
+        WHERE fetched_at > DATE_SUB(NOW(), INTERVAL 1 DAY)
+    </select>
+
+</mapper>
